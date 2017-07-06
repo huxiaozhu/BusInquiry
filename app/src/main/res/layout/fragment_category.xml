@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+    <include
+        layout="@layout/seach_title" />
+    <!--公交换乘模块-->
+    <RelativeLayout
+        android:id="@+id/bus_route_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/start_location_tv"
+            style="@style/SearchChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/start_location_name" />
+
+        <AutoCompleteTextView
+            android:id="@+id/start_location_ac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/start_location_tv" />
+        <TextView
+            android:id="@+id/end_location_tv"
+            style="@style/SearchChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/end_location_name"
+            android:layout_below="@id/start_location_ac"
+            />
+
+        <AutoCompleteTextView
+            android:id="@+id/end_location_ac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/end_location_tv"
+            android:layout_below="@id/start_location_ac"
+            />
+
+    </RelativeLayout>
+    <!--搜索模块-->
+    <LinearLayout
+        android:id="@+id/search_dim_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="110dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <AutoCompleteTextView
+            android:id="@+id/searchkey"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:hint="@string/dim_key_hint" />
+    </LinearLayout>
+    <!--线路模块-->
+    <LinearLayout
+        android:id="@+id/search_path_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            style="@style/SearchChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_path_name" />
+
+        <AutoCompleteTextView
+            android:id="@+id/search_path_ac"
+            style="@style/SearchChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/nextline"
+            style="@style/SearchChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上行/下行" />
+    </LinearLayout>
+    <!--站点模块-->
+    <LinearLayout
+        android:id="@+id/search_station_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/SearchChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="@string/search_station_name" />
+
+        <AutoCompleteTextView
+            android:id="@+id/search_station_ac"
+            style="@style/SearchChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3" />
+    </LinearLayout>
+    <!--线路上下行-->
+    <LinearLayout
+        android:id="@+id/search_path_station_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginBottom="10dip">
+
+        <Button
+            android:id="@+id/path_station_pre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="2dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/pre_" />
+
+        <Button
+            android:id="@+id/path_station_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="2dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/next_" />
+    </LinearLayout>
+    <!--公交查询模块popwind显示button -->
+
+</RelativeLayout>
